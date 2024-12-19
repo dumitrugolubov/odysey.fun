@@ -27,7 +27,7 @@ export default function Navbar() {
               <a href="/referral" className="text-gray-700 hover:text-violet-500 px-3 py-2 text-sm font-medium">Referral Program</a>
             </div>
             <a
-              href="https://odysey.fun"
+              href="https://ody.lol"
               className="bg-gradient-to-r from-blue-500 to-violet-500 text-white px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity"
             >
               To Exchange
@@ -53,7 +53,7 @@ export default function Navbar() {
             <a href="/referral" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-violet-500">Referral Program</a>
             <div className="px-3 py-2">
               <a
-                href="https://odysey.fun"
+                href="https://ody.lol"
                 className="block w-full bg-gradient-to-r from-blue-500 to-violet-500 text-white px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity text-center"
               >
                 To Exchange
