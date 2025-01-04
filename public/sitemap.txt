@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://odysey.fun/</loc>
     <lastmod>2024-02-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://odysey.fun/"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://odysey.fun/"/>
-    <xhtml:link rel="alternate" hreflang="en-EU" href="https://odysey.fun/"/>
   </url>
 </urlset>
