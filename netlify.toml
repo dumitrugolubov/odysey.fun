@@ -13,7 +13,3 @@
   [headers.values]
     cache-control = "public, max-age=0, must-revalidate"
     content-type = "application/xml"
-
-[plugins]
-  # Explicitly disable any sitemap plugins if they exist
-  package = []
