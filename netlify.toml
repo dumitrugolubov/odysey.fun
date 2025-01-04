@@ -17,7 +17,7 @@
   minify = false
 
 [[headers]]
-  for = "/sitemap.xml"
+  for = "/odysey-sitemap.xml"
   [headers.values]
     cache-control = "no-cache"
     content-type = "application/xml; charset=utf-8"
