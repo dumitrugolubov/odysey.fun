@@ -1,5 +1,5 @@
-# Force sitemap.xml to be served from sitemap.txt with XML content type
-/sitemap.xml /sitemap.txt 200! Content-Type=application/xml;charset=utf-8
+# Serve sitemap from txt file
+/sitemap.xml /sitemap.txt 200!
 
 # Handle client-side routing
 /* /index.html 200
