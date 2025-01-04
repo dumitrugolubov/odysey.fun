@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "rm -f dist/sitemap.xml dist/odysey-sitemap.xml",
     "build": "vite build && cp -f public/sitemap.txt dist/sitemap.txt",
     "lint": "eslint .",
     "preview": "vite preview"
