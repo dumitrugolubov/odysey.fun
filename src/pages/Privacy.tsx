@@ -1,7 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/shared/PageHeader';
 import SEO from '../components/SEO';
-import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Privacy() {
   const lastUpdated = '2025-01-05';
@@ -72,7 +71,6 @@ export default function Privacy() {
           }
         }}
       />
-      <Breadcrumbs items={breadcrumbs} />
       <PageHeader
         title="Privacy Policy"
         description="How we collect, use, and protect your data"
