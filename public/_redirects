@@ -1,3 +1,10 @@
+# Redirect www to non-www
+http://www.odysey.fun/* https://odysey.fun/:splat 301!
+https://www.odysey.fun/* https://odysey.fun/:splat 301!
+
+# Redirect HTTP to HTTPS
+http://odysey.fun/* https://odysey.fun/:splat 301!
+
 # Serve sitemap from txt file
 /sitemap.xml /sitemap.txt 200!
 

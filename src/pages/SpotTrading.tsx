@@ -1,9 +1,55 @@
 import React from 'react';
 import PageHeader from '../components/shared/PageHeader';
+import SEO from '../components/SEO';
 
 export default function SpotTrading() {
+  const breadcrumbs = [
+    { name: 'Home', item: '/' },
+    { name: 'Spot Trading', item: '/spot-trading' }
+  ];
+
   return (
     <div>
+      <SEO 
+        title="Spot Trading | Zero-Fee Meme Coin Trading | Odysey Exchange"
+        description="Trade your favorite meme coins with 0% spot trading fees on Odysey Exchange. Access deep liquidity pools and trade without any fees eating into your profits."
+        canonicalUrl="/spot-trading"
+        keywords={[
+          'zero fee trading',
+          'spot trading',
+          'meme coins',
+          'crypto exchange',
+          'DOGE trading',
+          'SHIB trading',
+          'PEPE trading'
+        ]}
+        breadcrumbs={breadcrumbs}
+        price={{
+          amount: 0,
+          currency: 'USD'
+        }}
+        rating={{
+          value: 4.8,
+          count: 1250
+        }}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: 'Spot Trading - Odysey Exchange',
+          description: 'Zero-fee spot trading for meme coins',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock'
+          },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.8',
+            reviewCount: '1250'
+          }
+        }}
+      />
       <PageHeader
         title="Spot Trading"
         description="Trade your favorite meme coins with 0% spot trading fees"

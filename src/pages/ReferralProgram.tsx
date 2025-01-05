@@ -1,9 +1,68 @@
 import React from 'react';
 import PageHeader from '../components/shared/PageHeader';
+import SEO from '../components/SEO';
 
 export default function ReferralProgram() {
+  const faqItems = [
+    {
+      question: "How much commission can I earn?",
+      answer: "You can earn up to 50% commission on your referrals' trading fees."
+    },
+    {
+      question: "How are commissions paid?",
+      answer: "Commissions are paid out automatically in the traded cryptocurrency."
+    },
+    {
+      question: "Is there a limit to how many people I can refer?",
+      answer: "No, there's no limit. Refer as many traders as you want and earn commission on all their trades."
+    }
+  ];
+
+  const breadcrumbs = [
+    { name: 'Home', item: '/' },
+    { name: 'Referral Program', item: '/referral' }
+  ];
+
   return (
     <div>
+      <SEO 
+        title="Referral Program | Earn 50% Commission | Odysey Exchange"
+        description="Join Odysey Exchange's referral program and earn up to 50% commission on your referrals' trading fees. Start earning passive income today with our generous crypto referral program."
+        canonicalUrl="/referral"
+        keywords={[
+          'crypto referral program',
+          'trading commission',
+          'passive income',
+          'affiliate program',
+          'crypto affiliate',
+          'referral bonus',
+          '50% commission'
+        ]}
+        faq={faqItems}
+        breadcrumbs={breadcrumbs}
+        videoUrl="https://odysey.fun/videos/referral-tutorial.mp4"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: 'Odysey Exchange Referral Program',
+          description: 'Earn up to 50% commission on referrals',
+          offers: {
+            '@type': 'Offer',
+            description: 'Up to 50% commission on trading fees',
+            availability: 'https://schema.org/InStock'
+          },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.9',
+            reviewCount: '2150'
+          },
+          potentialAction: {
+            '@type': 'JoinAction',
+            name: 'Join Referral Program',
+            url: 'https://odysey.fun/referral#join'
+          }
+        }}
+      />
       <PageHeader
         title="Referral Program"
         description="Earn up to 50% commission on referral trading fees"

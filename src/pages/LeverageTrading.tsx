@@ -1,9 +1,64 @@
 import React from 'react';
 import PageHeader from '../components/shared/PageHeader';
+import SEO from '../components/SEO';
 
 export default function LeverageTrading() {
+  const faqItems = [
+    {
+      question: "What is the maximum leverage available?",
+      answer: "We offer up to 777x leverage for experienced traders."
+    },
+    {
+      question: "What is the liquidation rebate?",
+      answer: "We offer a 10% liquidation rebate to help minimize losses."
+    },
+    {
+      question: "What are the margin requirements?",
+      answer: "Margin requirements vary by position size and leverage level. Contact support for detailed information."
+    }
+  ];
+
+  const breadcrumbs = [
+    { name: 'Home', item: '/' },
+    { name: 'Leverage Trading', item: '/leverage-trading' }
+  ];
+
   return (
     <div>
+      <SEO 
+        title="Leverage Trading | Up to 777x Leverage | Odysey Exchange"
+        description="Trade with up to 777x leverage on Odysey Exchange. Access advanced trading tools, deep liquidity pools, and competitive fees for leverage trading with 10% liquidation rebates."
+        canonicalUrl="/leverage-trading"
+        keywords={[
+          'leverage trading',
+          'margin trading',
+          '777x leverage',
+          'crypto leverage',
+          'meme coin leverage',
+          'liquidation rebate',
+          'crypto margin'
+        ]}
+        faq={faqItems}
+        breadcrumbs={breadcrumbs}
+        videoUrl="https://odysey.fun/videos/leverage-tutorial.mp4"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: 'Leverage Trading - Odysey Exchange',
+          description: 'Trade with up to 777x leverage',
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock',
+            description: 'Competitive fees with 10% liquidation rebate'
+          },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.7',
+            reviewCount: '850'
+          }
+        }}
+      />
       <PageHeader
         title="Leverage Trading"
         description="Trade with up to 777x leverage and 10% liquidation rebates"

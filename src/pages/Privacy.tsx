@@ -1,9 +1,78 @@
 import React from 'react';
 import PageHeader from '../components/shared/PageHeader';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Privacy() {
+  const lastUpdated = '2025-01-05';
+  
+  const faqItems = [
+    {
+      question: "What personal data do you collect?",
+      answer: "We collect basic account information, KYC documents where required, and trading activity data to comply with regulations."
+    },
+    {
+      question: "How do you protect user data?",
+      answer: "We use industry-standard encryption, secure servers, and strict access controls to protect your data."
+    },
+    {
+      question: "Can I request my data to be deleted?",
+      answer: "Yes, you can request data deletion through our support team, subject to regulatory retention requirements."
+    }
+  ];
+
+  const breadcrumbs = [
+    { name: 'Home', item: '/' },
+    { name: 'Privacy Policy', item: '/privacy' }
+  ];
+
   return (
     <div>
+      <SEO 
+        title="Privacy Policy | Odysey Exchange"
+        description="Learn about how Odysey Exchange protects your privacy and handles your personal information. Our comprehensive privacy policy explains your rights and our practices. Last updated January 2025."
+        canonicalUrl="/privacy"
+        ogType="article"
+        keywords={[
+          'privacy policy',
+          'data protection',
+          'GDPR compliance',
+          'user privacy',
+          'crypto exchange privacy',
+          'data security',
+          'user rights'
+        ]}
+        articlePublishedTime="2024-12-19T00:00:00Z"
+        articleModifiedTime={`${lastUpdated}T00:00:00Z`}
+        faq={faqItems}
+        breadcrumbs={breadcrumbs}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Privacy Policy - Odysey Exchange',
+          description: 'Odysey Exchange Privacy Policy',
+          datePublished: '2024-12-19T00:00:00Z',
+          dateModified: `${lastUpdated}T00:00:00Z`,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Odysey Exchange',
+            url: 'https://odysey.fun'
+          },
+          mainEntity: {
+            '@type': 'WebPage',
+            name: 'Privacy Policy',
+            datePublished: '2024-12-19T00:00:00Z',
+            dateModified: `${lastUpdated}T00:00:00Z`,
+            inLanguage: 'en-US',
+            about: {
+              '@type': 'Thing',
+              name: 'Data Privacy',
+              description: 'Information about how Odysey Exchange handles and protects user data'
+            }
+          }
+        }}
+      />
+      <Breadcrumbs items={breadcrumbs} />
       <PageHeader
         title="Privacy Policy"
         description="How we collect, use, and protect your data"
