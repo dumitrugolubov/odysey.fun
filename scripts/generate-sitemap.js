@@ -1,8 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const BASE_URL = 'https://odysey.fun';
 const PAGES_DIR = path.join(__dirname, '../src/pages');
+const OUTPUT_FILE = path.join(__dirname, '../dist/sitemap.xml');
 
 // Priority mapping for different types of pages
 const PRIORITY_MAP = {
@@ -16,6 +21,12 @@ const PRIORITY_MAP = {
 };
 
 function generateSitemapXML() {
+  // Ensure dist directory exists
+  const distDir = path.dirname(OUTPUT_FILE);
+  if (!fs.existsSync(distDir)) {
+    fs.mkdirSync(distDir, { recursive: true });
+  }
+
   const pages = fs.readdirSync(PAGES_DIR)
     .filter(file => file.endsWith('.tsx'))
     .map(file => {
@@ -23,13 +34,12 @@ function generateSitemapXML() {
       const stats = fs.statSync(path.join(PAGES_DIR, file));
       const lastMod = stats.mtime.toISOString().split('T')[0];
       const priority = PRIORITY_MAP[name] || '0.5';
-      const path = name === 'index' ? '' : name.replace(/([A-Z])/g, '-$1').toLowerCase();
+      const urlPath = name === 'index' ? '' : name.replace(/([A-Z])/g, '-$1').toLowerCase();
       
       return {
-        url: `${BASE_URL}${path ? '/' + path : ''}`,
+        url: `${BASE_URL}${urlPath ? '/' + urlPath : ''}`,
         lastmod: lastMod,
         priority: priority,
-        // More frequent updates for trading pages
         changefreq: ['SpotTrading', 'LeverageTrading'].includes(name) ? 'hourly' : 'daily'
       };
     });
@@ -47,20 +57,20 @@ function generateSitemapXML() {
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
     <mobile:mobile/>
-    ${['SpotTrading', 'LeverageTrading'].includes(page.url.split('/').pop()) ? `
+    ${['spot-trading', 'leverage-trading'].includes(page.url.split('/').pop()) ? `
     <news:news>
       <news:publication>
         <news:name>Odysey Exchange</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>${new Date().toISOString()}</news:publication_date>
-      <news:title>Latest Crypto Trading Updates</news:title>
+      <news:publication_date>${page.lastmod}</news:publication_date>
+      <news:title>Trading Updates</news:title>
     </news:news>` : ''}
-  </url>`).join('')}
+  </url>`).join('\n')}
 </urlset>`;
 
-  fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), xml);
-  console.log('Sitemap generated successfully!');
+  fs.writeFileSync(OUTPUT_FILE, xml);
+  console.log(`Sitemap generated at ${OUTPUT_FILE}`);
 }
 
 generateSitemapXML();
