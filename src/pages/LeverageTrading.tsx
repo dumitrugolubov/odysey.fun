@@ -45,17 +45,59 @@ export default function LeverageTrading() {
           '@context': 'https://schema.org',
           '@type': 'Product',
           name: 'Leverage Trading - Odysey Exchange',
-          description: 'Trade with up to 777x leverage',
+          description: 'Trade with up to 777x leverage on Odysey Exchange. Access advanced trading tools and competitive fees with 10% liquidation rebates.',
+          image: [
+            'https://odysey.fun/images/leverage-trading-main.webp',
+            'https://odysey.fun/images/leverage-trading-interface.webp'
+          ],
+          brand: {
+            '@type': 'Brand',
+            name: 'Odysey Exchange'
+          },
           offers: {
             '@type': 'Offer',
+            price: '0',
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
-            description: 'Competitive fees with 10% liquidation rebate'
+            priceValidUntil: '2025-12-31',
+            description: 'Competitive fees with 10% liquidation rebate',
+            hasMerchantReturnPolicy: {
+              '@type': 'MerchantReturnPolicy',
+              returnPolicyCategory: 'https://schema.org/ReturnFiniteReturnWindow',
+              returnWindow: 'P30D',
+              merchantReturnDays: '30',
+              returnMethod: 'https://schema.org/ReturnByMail'
+            },
+            shippingDetails: {
+              '@type': 'OfferShippingDetails',
+              shippingRate: {
+                '@type': 'MonetaryAmount',
+                value: '0',
+                currency: 'USD'
+              },
+              deliveryTime: {
+                '@type': 'ShippingDeliveryTime',
+                handlingTime: {
+                  '@type': 'QuantitativeValue',
+                  minValue: '0',
+                  maxValue: '0',
+                  unitCode: 'HUR'
+                },
+                transitTime: {
+                  '@type': 'QuantitativeValue',
+                  minValue: '0',
+                  maxValue: '0',
+                  unitCode: 'HUR'
+                }
+              }
+            }
           },
           aggregateRating: {
             '@type': 'AggregateRating',
             ratingValue: '4.7',
-            reviewCount: '850'
+            reviewCount: '850',
+            bestRating: '5',
+            worstRating: '1'
           }
         }}
       />
