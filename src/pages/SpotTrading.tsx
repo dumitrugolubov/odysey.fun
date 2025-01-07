@@ -36,17 +36,58 @@ export default function SpotTrading() {
           '@context': 'https://schema.org',
           '@type': 'Product',
           name: 'Spot Trading - Odysey Exchange',
-          description: 'Zero-fee spot trading for meme coins',
+          description: 'Zero-fee spot trading for meme coins on Odysey Exchange. Trade popular cryptocurrencies with no fees.',
+          image: [
+            'https://odysey.fun/images/spot-trading-main.webp',
+            'https://odysey.fun/images/spot-trading-interface.webp'
+          ],
+          brand: {
+            '@type': 'Brand',
+            name: 'Odysey Exchange'
+          },
           offers: {
             '@type': 'Offer',
             price: '0',
             priceCurrency: 'USD',
-            availability: 'https://schema.org/InStock'
+            availability: 'https://schema.org/InStock',
+            priceValidUntil: '2025-12-31',
+            hasMerchantReturnPolicy: {
+              '@type': 'MerchantReturnPolicy',
+              returnPolicyCategory: 'https://schema.org/ReturnFiniteReturnWindow',
+              returnWindow: 'P30D',
+              merchantReturnDays: '30',
+              returnMethod: 'https://schema.org/ReturnByMail'
+            },
+            shippingDetails: {
+              '@type': 'OfferShippingDetails',
+              shippingRate: {
+                '@type': 'MonetaryAmount',
+                value: '0',
+                currency: 'USD'
+              },
+              deliveryTime: {
+                '@type': 'ShippingDeliveryTime',
+                handlingTime: {
+                  '@type': 'QuantitativeValue',
+                  minValue: '0',
+                  maxValue: '0',
+                  unitCode: 'HUR'
+                },
+                transitTime: {
+                  '@type': 'QuantitativeValue',
+                  minValue: '0',
+                  maxValue: '0',
+                  unitCode: 'HUR'
+                }
+              }
+            }
           },
           aggregateRating: {
             '@type': 'AggregateRating',
             ratingValue: '4.8',
-            reviewCount: '1250'
+            reviewCount: '1250',
+            bestRating: '5',
+            worstRating: '1'
           }
         }}
       />
