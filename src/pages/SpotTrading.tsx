@@ -47,27 +47,21 @@ export default function SpotTrading() {
           },
           offers: {
             '@type': 'Offer',
-            priceSpecification: {
-              '@type': 'PriceSpecification',
-              price: '0',
-              priceCurrency: 'USD'
-            },
+            price: '0',
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
             priceValidUntil: '2025-12-31',
             hasMerchantReturnPolicy: {
               '@type': 'MerchantReturnPolicy',
-              returnPolicyCategory: 'https://schema.org/ReturnFiniteReturnWindow',
-              returnWindow: 'P30D',
-              merchantReturnDays: '30',
+              returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+              applicableCountry: 'US',
               returnMethod: 'https://schema.org/ReturnByMail'
             },
             shippingDetails: {
               '@type': 'OfferShippingDetails',
-              shippingRate: {
-                '@type': 'MonetaryAmount',
-                value: '0',
-                currency: 'USD'
+              shippingDestination: {
+                '@type': 'DefinedRegion',
+                addressCountry: 'US'
               },
               deliveryTime: {
                 '@type': 'ShippingDeliveryTime',
@@ -75,13 +69,13 @@ export default function SpotTrading() {
                   '@type': 'QuantitativeValue',
                   minValue: '0',
                   maxValue: '0',
-                  unitCode: 'HUR'
+                  unitCode: 'MIN'
                 },
                 transitTime: {
                   '@type': 'QuantitativeValue',
                   minValue: '0',
                   maxValue: '0',
-                  unitCode: 'HUR'
+                  unitCode: 'MIN'
                 }
               }
             }
