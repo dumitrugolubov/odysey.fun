@@ -10,11 +10,13 @@
   X-XSS-Protection: 1; mode=block
   NEL: {"report_to": "default", "max_age": 31536000, "include_subdomains": true}
   Report-To: {"group": "default", "max_age": 31536000, "endpoints": [{"url": "https://odysey.fun/api/csp-report"}]}
+  Link: <https://odysey.fun:splat>; rel="canonical"
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
   Link: </styles.css>; rel=preload; as=style
   Link: </main.js>; rel=preload; as=script
+  Link: <https://odysey.fun:splat>; rel="canonical"
 
 /static/*
   Cache-Control: public, max-age=31536000, immutable
