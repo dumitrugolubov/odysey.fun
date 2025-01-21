@@ -49,7 +49,13 @@ export default function ReferralProgram() {
           offers: {
             '@type': 'Offer',
             description: 'Up to 50% commission on trading fees',
-            availability: 'https://schema.org/InStock'
+            availability: 'https://schema.org/InStock',
+            priceSpecification: {
+              '@type': 'PriceSpecification',
+              price: '0',
+              priceCurrency: 'USD',
+              description: 'Free to join. Earn up to 50% commission on referral trading fees.'
+            }
           },
           aggregateRating: {
             '@type': 'AggregateRating',
