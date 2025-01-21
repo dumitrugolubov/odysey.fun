@@ -46,6 +46,10 @@ export default function ReferralProgram() {
           '@type': 'Product',
           name: 'Odysey Exchange Referral Program',
           description: 'Earn up to 50% commission on referrals',
+          image: [
+            'https://odysey.fun/images/referral-program-main.webp',
+            'https://odysey.fun/images/referral-program-dashboard.webp'
+          ],
           offers: {
             '@type': 'Offer',
             description: 'Up to 50% commission on trading fees',
