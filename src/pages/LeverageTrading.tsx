@@ -63,31 +63,14 @@ export default function LeverageTrading() {
             description: 'Competitive fees with 10% liquidation rebate',
             hasMerchantReturnPolicy: {
               '@type': 'MerchantReturnPolicy',
-              returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-              applicableCountry: 'US',
-              returnMethod: 'https://schema.org/ReturnByMail'
-            },
-            shippingDetails: {
-              '@type': 'OfferShippingDetails',
-              shippingDestination: {
-                '@type': 'DefinedRegion',
-                addressCountry: 'US'
+              returnPolicyCategory: 'https://schema.org/ReturnFiniteReturnWindow',
+              merchantReturnDays: 30,
+              returnFees: {
+                '@type': 'MonetaryAmount',
+                value: '0.00',
+                currency: 'USD'
               },
-              deliveryTime: {
-                '@type': 'ShippingDeliveryTime',
-                handlingTime: {
-                  '@type': 'QuantitativeValue',
-                  minValue: '0',
-                  maxValue: '0',
-                  unitCode: 'MIN'
-                },
-                transitTime: {
-                  '@type': 'QuantitativeValue',
-                  minValue: '0',
-                  maxValue: '0',
-                  unitCode: 'MIN'
-                }
-              }
+              applicableCountry: 'US'
             }
           },
           aggregateRating: {

@@ -54,11 +54,19 @@ export default function ReferralProgram() {
             '@type': 'Offer',
             description: 'Up to 50% commission on trading fees',
             availability: 'https://schema.org/InStock',
-            priceSpecification: {
-              '@type': 'PriceSpecification',
-              price: '0',
-              priceCurrency: 'USD',
-              description: 'Free to join. Earn up to 50% commission on referral trading fees.'
+            price: '0.00',
+            priceCurrency: 'USD',
+            priceValidUntil: '2025-12-31',
+            hasMerchantReturnPolicy: {
+              '@type': 'MerchantReturnPolicy',
+              returnPolicyCategory: 'https://schema.org/ReturnFiniteReturnWindow',
+              merchantReturnDays: 30,
+              returnFees: {
+                '@type': 'MonetaryAmount',
+                value: '0.00',
+                currency: 'USD'
+              },
+              applicableCountry: 'US'
             }
           },
           aggregateRating: {
