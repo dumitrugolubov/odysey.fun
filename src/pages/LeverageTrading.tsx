@@ -56,7 +56,7 @@ export default function LeverageTrading() {
           },
           offers: {
             '@type': 'Offer',
-            price: '0',
+            price: '0.00',
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
             priceValidUntil: '2025-12-31',
